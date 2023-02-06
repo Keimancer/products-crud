@@ -1,7 +1,7 @@
 //* Dependencies
 const express = require('express');
 
-//* Initial configs
+//* Initial configurations
 const productsRouter = require('./products/products.router');
 const db = require('./utils/database');
 const app = express();
