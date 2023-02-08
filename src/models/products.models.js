@@ -12,7 +12,17 @@ const Products = db.define( 'products', {
     title: {
         type: DataTypes.STRING,
         allowNull: false,
-        defaultValue: '',
         unique: true
+    },
+    price: {
+        type: DataTypes.DECIMAL,
+        allowNull: false,
+    },
+    currency: {
+        type: DataTypes.STRING(3),
+        allowNull: false,
+    },
+    imageUrl: {
+        type: DataTypes.STRING
     }
 } );
