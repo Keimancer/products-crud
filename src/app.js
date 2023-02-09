@@ -1,5 +1,6 @@
 //* Dependencies
 const express = require('express');
+require('dotenv').config;
 
 //* Initial configurations
 const productsRouter = require('./products/products.router');
