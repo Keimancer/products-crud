@@ -1,6 +1,6 @@
 //* Dependencies
 const express = require('express');
-require('dotenv').config;
+require('dotenv').config();
 
 //* Initial configurations
 const productsRouter = require('./products/products.router');
@@ -29,7 +29,6 @@ db.sync()
 app.get( '/', ( req, res ) => {
     res.json( {
         message: 'Server OK!',
-        password: process.env.MY_PASSWORD
     } );
 } );
 
