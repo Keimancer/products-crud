@@ -12,8 +12,9 @@ const config = {
         development: {
             dialect: 'postgres',
             host: 'localhost',
-            username: 'postgres',
-            password: process.env.DEV_DB_PASS,
+            username: process.env.DEV_DB_USER,
+            password: 'Aen3ri@Syl',
+            port: 5432,
             database: 'products-db',
             define: {
                 timestamps: true,

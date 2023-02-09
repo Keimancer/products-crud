@@ -23,6 +23,10 @@ const Products = db.define( 'products', {
         allowNull: false,
     },
     imageUrl: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        allowNull: false
     }
 } );
+
+//* Exports
+module.exports = Products;
