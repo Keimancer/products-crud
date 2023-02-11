@@ -1,9 +1,20 @@
 //* Imports
+const Categories = require('../models/categories.models');
 const Products = require('../models/products.models');
 
 //* GET all products
 const findAllProducts = async () => {
-    const data = await Products.findAll();
+    const data = await Products.findAll({
+        attributes: {
+            exclude: [ 'categoryId', 'createdAt', 'updatedAt' ]
+        },
+        include: {
+            model: Categories,
+            attributes: {
+                exclude: [ 'createdAt', 'updatedAt' ]
+            }
+        }
+    });
     return data;
 };
 

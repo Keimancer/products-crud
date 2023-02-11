@@ -1,6 +1,7 @@
 //* Imports
 const { DataTypes } = require('sequelize');
 const db = require('../utils/database');
+const Categories = require('./categories.models');
 
 //* Models
 const Products = db.define( 'products', {
@@ -25,6 +26,14 @@ const Products = db.define( 'products', {
     imageUrl: {
         type: DataTypes.STRING,
         allowNull: false
+    },
+    categoryId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: Categories,
+            key: 'id'
+        }
     }
 } );
 

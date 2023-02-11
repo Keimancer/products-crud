@@ -5,6 +5,7 @@ require('dotenv').config();
 //* Initial configurations
 const productsRouter = require('./products/products.router');
 const db = require('./utils/database');
+const initModels = require('./models/initModels');
 const app = express();
 app.use( express.json() );
 
@@ -24,6 +25,8 @@ db.sync()
     .catch( err => {
         console.log( err );
     } );
+
+initModels();
 
 //* API actions
 app.get( '/', ( req, res ) => {
